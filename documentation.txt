@@ -1,0 +1,150 @@
+METRO SIMULATOR ASSIGNMENT - Introduction to PROGRAMMING (CSE101)
+
+Submitted by -
+SIFAT KAUR KOCHAR
+
+
+All the required data for this assignment has been collected from the official website of DMRC - https://delhimetrorail.com/
+Additionally, data regarding distances has been collected manually from Google Maps.
+
+CONSIDERATIONS/ASSUMPTIONS regarding the DATA -
+
+[Metro_Line]
+
+[1]
+Official DMRC website considers L3 - Blue Line (DWARKA SECTOR - 21 -- NOIDA ELECTRONIC CITY) and L4 - Blue Line (YAMUNA BANK -- VAISHALI)
+
+Consideration/Assumption -
+L3 - Blue Line (DWARKA SECTOR - 21 -- NOIDA ELECTRONIC CITY)
+L4 - Blue Line (DWARKA SECTOR - 21 -- VAISHALI)
+
+On the common segment (DWARKA SECTOR - 21 -- YAMUNA BANK), metros alternate services perfectly.
+
+Metro 1: L3 (NOIDA ELECTRONIC CITY)
+Metro 2: L4 (VAISHALI)
+Metro 3: L3 (NOIDA ELECTRONIC CITY)
+Metro 4: L4 (VAISHALI)
+
+[2]
+The official DMRC website mentions that the Magenta line is being extended. An additional station, 'KRISHNA PARK EXTENSION', before 'JANAKPURI WEST', is already operational.
+
+Consideration/Assumption -
+L8 - Magenta Line (JANAKPURI WEST -- BOTANICAL GARDEN) 
+
+{'KRISHNA PARK EXTENSION' has not been considered.}
+
+[Stations]
+
+[1]
+The names of the stations are as mentioned on the DMRC website.
+
+[2]
+The Travel_Time(min) refers to the time taken for a metro to travel between two stations. This data has also been gathered from the DMRC website -
+https://delhimetrorail.com/map
+
+[3]
+The Distance(km) refers to the distance between two consecutive stations on a metro line. Since this data is not available on the DMRC website, these distances have been manually calculated using Google Maps.
+The 'Measure Distance' feature of Google Maps was used for this. This feature, however, provides only the displacement/shortest aerial distance between the two stations.
+
+[Interchange]
+
+[1]
+The 'Delay(min)' refers to the time taken to interchange the metro lines. Since no data regarding the interchange delay times is present on the DMRC website/internet, hence -
+
+Assumption -
+The interchange delay times of the stations have been assumed based on the complexity of the metro stations as found on the internet.
+
+[Fare]
+
+For the fare slabs as mentioned on the DMRC website, the maximum slab goes for distances that are 'more than 32kms'.
+
+Consideration -
+'more than 32kms' has been considered as a distance between 32-999kms. The figure 999 is treated as a randomly large number.
+
+CONSIDERATIONS/ASSUMPTIONS regarding the CODE -
+
+The function data_func() helps gather all the data from the 'metro_data.txt' file.
+It stores all the data of the file in the form of a dictionary, with its keys being the 5 headings of the text file.
+The value of a key is a list containing each line under that heading as an individual dictionary.
+The keys of these sub-dictionaries are the sub-headings that were mentioned in the # rows. The values correspond to the respective values for each row under these sub-headings.
+
+For the stations order -
+Blue (L3) -- Forward Direction = DWARKA SECTOR - 21 to NOIDA ELECTRONIC CITY
+Blue (L4) -- Forward Direction = DWARKA SECTOR - 21 to VAISHALI
+Magenta -- Forward Direction = JANAKPURI WEST to BOTANICAL GARDEN
+Yellow -- Forward Direction = SAMAYPUR BADLI to MILLENNIUM CITY CENTRE GURUGRAM
+
+All station names/line names to be inputted in CAPITALS.
+Times to be inputted in the format - "10:28"
+
+The functions - from_to_time(), route_shortest_time() and best_route_time() together work to operate option 2 of the menu.
+I tried to use the concept of 'Breadth-First Search' to compute this.
+I referred to GeeksForGeeks to learn a little about this topic.
+
+https://www.geeksforgeeks.org/dsa/breadth-first-search-or-bfs-for-a-graph/
+
+Option 2 of the menu functions well by providing the path/routing for current stations and destinations on the same line or different lines. It also lets the user know if their start and end stations are on the same line or not.
+
+CONSIDERATION -
+Option 2 of the menu, when selected - displays the complete path and time taken between any two stations on same or different lines. It also mentions if the stations lie on the same line or not.
+It however works while considering that the user does not require the number of interchanges taking place.
+
+
+INSTRUCTIONS TO RUN THE PROGRAM -
+
+The program operates via a menu that provides the user with 3 options.
+
+The user is required to select their desired choice as an integer out of 1,2,3.
+
+
+__BONUS PART__
+
+All the required data for the BONUS part has also been collected from the official website of DMRC - https://delhimetrorail.com/
+Additionally, data regarding distances has been collected manually from Google Maps.
+
+For the BONUS part, I have added the data of the Yellow Line as well.
+
+CONSIDERATIONS/ASSUMPTIONS regarding the DATA of Yellow Line -
+
+[Metro_Line]
+
+[1]
+Some old sources on the internet mentioned the Direction_2_End of L2 (Yellow Line) as 'HUDA CITY CENTRE'. The station is now officially called 'MILLENNIUM CITY CENTRE GURUGRAM'. 
+
+Consideration -
+L2 - Yellow Line (SAMAYPUR BADLI -- MILLENNIUM CITY CENTRE GURUGRAM)
+
+[Stations]
+
+[1]
+The names of the stations are as mentioned on the DMRC website.
+
+[2]
+The Travel_Time(min) refers to the time taken for a metro to travel between two stations. This data has also been gathered from the DMRC website -
+https://delhimetrorail.com/map
+
+[3]
+The Distance(km) refers to the distance between two consecutive stations on a metro line. Since this data is not available on the DMRC website, these distances have been manually calculated using Google Maps.
+The 'Measure Distance' feature of Google Maps was used for this. This feature, however, provides only the displacement/shortest aerial distance between the two stations.
+
+[Interchange]
+
+[1]
+The 'Delay(min)' refers to the time taken to interchange the metro lines. Since no data regarding the interchange delay times is present on the DMRC website/internet, hence -
+
+Assumption -
+The interchange delay times of the stations have been assumed based on the complexity of the metro stations as found on the internet.
+
+[Fare]
+
+For the fare slabs as mentioned on the DMRC website, the maximum slab goes for distances that are 'more than 32kms'.
+
+Consideration -
+'more than 32kms' has been considered as a distance between 32-999kms. The figure 999 is treated as a randomly large number.
+
+CONSIDERATIONS/ASSUMPTIONS regarding the CODE -
+
+For the stations order -
+Yellow -- Forward Direction = SAMAYPUR BADLI to MILLENNIUM CITY CENTRE GURUGRAM
+
+The other aspects remain exactly the same as for the main assignment as well.
